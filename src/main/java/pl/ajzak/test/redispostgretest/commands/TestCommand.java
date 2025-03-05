@@ -44,7 +44,7 @@ public class TestCommand {
     }
 
     @Execute(name = "set")
-    void setCoins(@Context Player player, @Join String identifier, @Arg int coins) {
+    void setCoins(@Context Player player, @Arg String identifier, @Arg int coins) {
         UUID uuid = getUUIDFromIdentifier(identifier);
         User userFromCache = userManager.getUserFromCache(uuid);
         if (uuid == null) {
@@ -52,7 +52,7 @@ public class TestCommand {
             return;
         }
         userManager.updateUserCoins(uuid, coins);
-        Notice.send(player, "<green>Ustawiono " + coins + "monet dla gracza " + userFromCache.getName());
+        Notice.send(player, "<green>Ustawiono " + coins + " monet dla gracza " + userFromCache.getName());
     }
 
     private UUID getUUIDFromIdentifier(String identifier) {
