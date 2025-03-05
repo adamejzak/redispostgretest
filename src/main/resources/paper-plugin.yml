@@ -1,0 +1,4 @@
+name: redispostgretest
+version: '1.0'
+main: pl.ajzak.test.redispostgretest.Main
+api-version: '1.21'
